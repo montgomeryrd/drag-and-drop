@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   width: 180px;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .container li {
@@ -27,4 +28,23 @@
   cursor: pointer;
   color: white;
   background: rgb(99, 97, 97);
+}
+
+.task {
+  cursor: grab;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.task.dragging {
+  cursor: grabbing;
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+.container.drop {
+  border: 2px dashed #FFF;
+}
+
+.container.drop ul {
+  pointer-events: none;
 }
